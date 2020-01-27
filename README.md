@@ -10,6 +10,7 @@ Sample Boiler Plate with example app of user management.
 <br/>
 
 > Please note that in order to start this app you will require a ***'.env'*** file in the root folder of app.
+
 > In this boiler plate it is assumed that on servers you are using environment variables from server and not from the .env file , if you wish to use .env file on server too then just remove the if condition on require of env file in ./app.js line no  6.
 
 
