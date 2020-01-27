@@ -1,0 +1,43 @@
+{
+  "name": "express-boiler-plate",
+  "version": "0.0.1",
+  "private": true,
+  "description": "sample boiler plate on exprerss using .env with authentication",
+  "keywords": ["express","boiler plate",".env","authentication"],
+  "author": "DannyWhyte",
+  "license": "MIT",
+  "main": "app.js",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "jsonschema": "^1.2.4",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.1",
+    "q": "^1.5.1",
+    "swagger-ui-express": "^3.0.9",
+    "underscore": "^1.9.0"
+  },
+  "devDependencies": {
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha test/mainSpec.js --timeout 300000 --reporter spec",
+    "dev": "nodemon app --ignore ./config/"
+  },
+  "standard": {
+    "globals": [
+      "absolutePath",
+      "q",
+      "_",
+      "v"
+    ],
+    "envs": [
+      "mocha"
+    ]
+  }
+}
