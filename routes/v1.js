@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const isAuthorized = require('../middlewares/authenticate')
+const isAuthorized = require('../middlewares/isAuthorizedChecker')
 const constants = require('../config/constants')
 const BASE_URL_V1 = constants.BASE_URL + constants.V1
 const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('../api/swagger/swagger.json')
+
 // Swagger route
-let swaggerDocument = require('../api/swagger/swagger.json')
 router.use(BASE_URL_V1 + '/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // TEST APIs

@@ -17,7 +17,7 @@ global.v = new Validator()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const helmet = require('helmet')
-const v1Routes = require('./routes/v1')
+const routes = require('./routes/routes')
 const headersManipulator = require('./middlewares/headersManipulator')
 const constants = require('./config/constants')
 const BASE_URL = constants.BASE_URL
@@ -57,23 +57,14 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!')
 })
 
+// for routes
+app.use(routes)
 // APP.USE END ==========================================================
 
-// ============ SERVING APIs START ============
-app.use(v1Routes)
-// server up test route
-app.get(BASE_URL + '/ping', (req, res) => res.status(200).send('Pong'))
-// ON NO ROUTE MATCH
-app.get('*', (req, res) => {
-  // console.log("no route found,throwing 404 error." + req.url);
-  res.status(404).send('404 PAGE not found >' + req.url + '<<')
-})
-// ============ SERVING APIs END ============
-
 // SERVER PORT SECTION START =======================================
-let port = process.env.PORT || 9010
-let server = app.listen(port)
-let environment = process.env.NODE_ENV
+const port = process.env.PORT || 9010
+const server = app.listen(port)
+const environment = process.env.NODE_ENV
 server.timeout = 3600000
 
 module.exports = exports

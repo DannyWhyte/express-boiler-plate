@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "description": "sample boiler plate on exprerss using .env with authentication",
-  "keywords": ["express","boiler plate",".env","authentication"],
+  "keywords": [
+    "express",
+    "boiler plate",
+    ".env",
+    "authentication"
+  ],
   "author": "DannyWhyte",
   "license": "MIT",
   "main": "app.js",
@@ -16,7 +21,9 @@
     "jsonschema": "^1.2.4",
     "mocha": "^5.2.0",
     "moment": "^2.22.1",
+    "pg": "^7.17.1",
     "q": "^1.5.1",
+    "standard": "^14.3.1",
     "swagger-ui-express": "^3.0.9",
     "underscore": "^1.9.0"
   },
