@@ -1,9 +1,11 @@
-const dbConnectionProvider = require('./handler')
+const DbOperations = require('./operations')
+const pm = require('./poolManager')
+const dbOperations = new DbOperations(pm)
 
 class DbInformation {
   version () {
     const version = q.defer()
-    dbConnectionProvider.query('select version()')
+    dbOperations.find('select version()')
       .then(data => version.resolve(data))
       .catch(err => version.reject(err))
     return version.promise
